@@ -1,0 +1,5 @@
+CN1CCc2ccc([N+](=O)[O-])cc2CC1
+Clc1ccccc1N1CCNCC1
+CN1CC=C(c2c[nH]c3ccccc23)CC1
+c1ccc(C2CCCNC2)cc1
+CN1CCC(c2c[nH]c3ccc(N)cc23)CC1
