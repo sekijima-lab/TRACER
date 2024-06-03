@@ -1,6 +1,7 @@
 # TRACER: Molecular Optimization Using Conditional Transformer for Reaction-Aware Compound Exploration with Reinforcement Learning
 
-This repository contains the source code of TRACER, a framework for molecular optimization with synthetic pathways. TRACER integrates a conditional Transformer model trained on chemical reactions with Monte Carlo Tree Search (MCTS) for efficient exploration of the chemical space. For more details, please refer to [paper](https://chemrxiv.org/engage/chemrxiv/article-details/665d4ac021291e5d1df1666b).
+This repository contains the source code of TRACER, a framework for molecular optimization with synthetic pathways. TRACER integrates a conditional Transformer model trained on chemical reactions with Monte Carlo Tree Search (MCTS) for efficient exploration of the chemical space. For more details, please refer to the [paper](https://chemrxiv.org/engage/chemrxiv/article-details/665d4ac021291e5d1df1666b).
+
 
 ## Installation
 
@@ -12,7 +13,7 @@ To set up the environment for running TRACER, follow these steps to create a con
    cd TRACER
    ```
 
-2. Create a conda environment using the provided `env.yml` file:
+2. Create a conda environment using the provided `env.yml`:
    ```
    conda env create -f env.yml
    ```
@@ -39,9 +40,9 @@ Please note that you need to run this command every time you start a new termina
 
 ## Download Model Parameters
 
-Please download trained weights for the Transformer from [Figshare here](https://figshare.com/account/articles/25853551), and place the weights in the `ckpts/Transformer/`.
+Please download trained weights for the Transformer from [Figshare here](https://figshare.com/articles/software/Weights_of_conditional_unconditional_Transformer/25853551), and place the weights in the `ckpts/Transformer/` directory.
 
-Then, directory substructure is as follows:
+Then, the directory substructure is as follows:
 
 
 ```
@@ -60,15 +61,13 @@ Then, directory substructure is as follows:
 
 TRACER uses Hydra for managing the configuration of experiments. 
 
-The configuration files are located in the `config/config.py`.
-
-You can modify the configuration files to adjust the hyperparameters and settings for training and molecular generation.
+You can modify the configuration file (`config/config.py`) to adjust the hyperparameters and settings for training and molecular generation.
 
 ## (optional) Training the Transformer and GCN Model
 
-Weights used in the paper are provided, so training the Transformer and GCN model is not necessarily required.
+The weights used in the paper are provided at Figshare.
 
-If you would like to train the model using other training dataset, please refer to the following procedure.
+If you would like to train the model using other training datasets, please refer to the following procedure.
 
 1. To train the Transformer model on chemical reactions, run `scripts/transformer_train.py`:
    ```
@@ -82,7 +81,7 @@ If you would like to train the model using other training dataset, please refer 
 
 The trained weights will be saved in the `ckpts` directory.
 
-## Generating Compounds with MCTS
+## Structural Optimization using MCTS
 
 To generate optimized compounds using MCTS and the trained models, run `scripts/mcts.py`:
 ```
@@ -104,18 +103,19 @@ The generated compounds and their synthesis routes will be saved in the `mcts_ou
 │   └── USPTO/        # Curated dataset based on USPTO 1k TPL [1]
 ├── Model/               
 │   ├── GCN/          # Code for GCN 
-│   ├── QSAR/         # Pickle file of QSAR model
+│   ├── QSAR/         # Pickle file of the QSAR model
 │   └── Transformer/  # Code for Transformer
 ├── Utils/            # Utility functions
 ├── scripts/          # Code for running model training and compound generation
 ├── ckpts/            # The weights of trained Transformer and GCN models
 ├── translation/      # Output directory for Transformer inference experiments
 ├── mcts_out/         # Output directory for MCTS experiment results
-├── env.yml           # Conda environment configuration file
-├── set_up.sh         # Shell script to set up $PYTHONPATH
+├── env.yml           # The conda environment configuration file
+├── set_up.sh         # Shell script to set up the $PYTHONPATH
 └── config/           # Configuration file
 
 ```
 
 ## References
+
 [1] Schwaller, P.; Probst, D.; Vaucher, A. C.; Nair, V. H.; Kreutter, D.; Laino, T.; Reymond, J.-L. Mapping the Space of Chemical Reactions Using Attention-Based Neural Networks. *Nat. Mach. Intell.* **2021**, *3*, 144–152, DOI: 10.1038/s42256-020-00284-w
