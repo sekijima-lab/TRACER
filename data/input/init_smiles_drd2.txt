@@ -1,5 +1,5 @@
-c1ccc(N2CCNCC2)cc1
-Clc1ccccc1N1CCNCC1
-CN1CCc2ccc([N+](=O)[O-])cc2CC1
-c1ccc(C2CCCNC2)cc1
-CN1CCC(c2c[nH]c3ccc(N)cc23)CC1
+OC1CCc2cc(F)ccc21
+c1ccc2c(c1)CC1CNCCN21
+NC1CCN(CCc2ccccc2)C1
+Oc1ccc2c(c1)CNCC2
+N#Cc1cccc(N2CCNCC2)c1

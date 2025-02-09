@@ -1,0 +1,5 @@
+NCC(O)c1ccccc1
+Cc1cn(C)c(CSCCN)n1
+NCc1ccc2ccccc2c1
+NNc1cccc2ncccc12
+NCCc1ccccn1

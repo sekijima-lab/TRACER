@@ -1,0 +1,5 @@
+CC1CCCN1C1CCNC1
+N#Cc1ncc(C(F)(F)F)cc1N
+N#Cc1cnc2c(c1)CCC2=O
+Nc1ccc(Oc2cccnc2)cc1
+N#Cc1ccc(-c2cnco2)cc1
