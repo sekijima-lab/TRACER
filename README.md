@@ -1,6 +1,6 @@
 # TRACER: Molecular Optimization Using Conditional Transformer for Reaction-Aware Compound Exploration with Reinforcement Learning
 
-This repository contains the source code of TRACER, a framework for molecular optimization with synthetic pathways. TRACER integrates a conditional Transformer model trained on chemical reactions with Monte Carlo Tree Search (MCTS) for efficient exploration of the chemical space. For more details, please refer to the [paper](https://chemrxiv.org/engage/chemrxiv/article-details/665d4ac021291e5d1df1666b).
+This repository contains the source code of TRACER, a framework for molecular optimization with synthetic pathways. TRACER integrates a conditional Transformer model trained on chemical reactions with Monte Carlo Tree Search (MCTS) for efficient exploration of the chemical space. For more details, please refer to the [paper](https://www.nature.com/articles/s42004-025-01437-x).
 
 
 ## Installation
