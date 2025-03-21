@@ -103,7 +103,7 @@ The generated compounds and their synthesis routes will be saved in the `mcts_ou
 │   └── USPTO/        # Curated dataset based on USPTO 1k TPL [1]
 ├── Model/               
 │   ├── GCN/          # Code for GCN 
-│   ├── QSAR/         # Pickle file of the QSAR model
+│   ├── QSAR/         # Pickle file of the QSAR models
 │   └── Transformer/  # Code for Transformer
 ├── Utils/            # Utility functions
 ├── scripts/          # Code for running model training and compound generation
