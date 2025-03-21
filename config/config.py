@@ -77,12 +77,12 @@ class MCTSConfig:
     tgt_train: str = '/data/USPTO/tgt_train.txt'
     src_valid: str = '/data/USPTO/src_valid.txt'
     tgt_valid: str = '/data/USPTO/tgt_valid.txt'
-    n_step: int = 200
-    max_depth: int = 10
+    n_step: int = 100
+    max_depth: int = 5
     in_smiles_file: str = '/data/input/init_smiles_drd2.txt'
     out_dir: str = '/mcts_out'
     ucb_c: float = 1/math.sqrt(2)
-    reward_name: str = 'DRD2'  # 'DRD2' or 'QED'
+    reward_name: str = 'DRD2'  # 'DRD2' or 'AKT1' or 'CXCR4'
     ckpt_Transformer: str = '/ckpts/Transformer/ckpt_conditional.pth'
     ckpt_GCN: str = '/ckpts/GCN/GCN.pth'
     beam_width:int = 10

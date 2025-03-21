@@ -11,22 +11,13 @@ from rdkit import RDLogger
 RDLogger.DisableLog('rdApp.*')
 from rdkit.Chem import AllChem, QED
 
-def getReward(name,
-              receptor_path=None,
-              pdbqt_path=None,
-              VinaGPU_path=None,
-              VinaGPU_config=None):
+def getReward(name):
     if name == "QED":
         return QEDReward()
-    elif name == 'DRD2':
-        with open(hydra.utils.get_original_cwd() + '/Model/QSAR/drd2_qsar_optimized.pkl', mode='rb') as f:
-            qsar_model = pickle.load(f)
-        return QSAR_Reward(qsar_model)
-    elif name == 'AKT1':
-        with open(hydra.utils.get_original_cwd() + '/Model/QSAR/akt1_qsar_optimized.pkl', mode='rb') as f:
-            qsar_model = pickle.load(f)
-        return QSAR_Reward(qsar_model)
-
+    else:
+        with open(hydra.utils.get_original_cwd() + f'/Model/QSAR/qsar_{name}_optimized.pkl', mode='rb') as f:
+            qwar_model = pickle.load(f)
+        return QSAR_Reward(qwar_model)
 
 class Reward:
     def __init__(self):

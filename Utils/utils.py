@@ -69,7 +69,7 @@ class RootNode(Node):
     def __init__(self, c=1/np.sqrt(2)):
         super().__init__()
         self.smi = '&&'
-        self.depth = 0
+        self.depth = -1
 
         self.c = c
 
@@ -162,45 +162,6 @@ class AverageMeter(object):
         self.count += n
         self.avg = self.sum / self.count
 
-# def accuracy(output, target, batch_size, v=None):
-#     '''
-#     Computes the accuracy of top1 prediction
-    
-#     output: (seq_length*batch_size, num_tokens)
-#     target: (seq_length*batch_size)
-#     '''
-    
-#     pad_mask = (target != v['<pad>']) # padはFalse, それ以外はTrue
-#     true_pos = torch.nonzero(pad_mask).squeeze().tolist()
-#     out_extracted = output[true_pos]
-#     t_extracted = target[true_pos]
-#     _, pred = out_extracted.topk(1, 1, True, True) # arg of topk: (k, dim=1, largest=True, sorted=True)
-#     pred = pred.t() # (seq*batch, maxk) -> (maxk, seq*batch)
-#     correct = pred.eq(t_extracted.reshape(1, -1).expand_as(pred)) # target:(seq*batch, 1) -> (1, seq*batch) -> (maxk, seq*batch)
-#     # Tensor.eq: compute element-wise equality, correct: bool matrix
-#     correct_rate = (correct[0].float().sum(0, keepdim=True)) / len(t_extracted)
-    
-#     # compute accuracy per whole molecule
-#     target = target.reshape(-1, batch_size)
-#     output = output.reshape(-1, batch_size, v.__len__())
-#     _, pred = output.topk(10, 2, True, True)
-#     top1, top5, top10 = pred[:, :, 0], pred[:, :, 0:4], pred[:, :, 0:9]
-#     pred_list = [top1, top5, top10]
-#     perfect_acc_list = []
-#     EOS_token = v['<eos>']
-#     for pred in pred_list:
-#         correct_cum = 0
-#         for i in range(batch_size):
-#             t = target[:, i].tolist()
-#             eos_idx = t.index(EOS_token)
-#             t = t[0:eos_idx]
-#             p = pred[:, i].tolist()
-#             p = p[0:len(t)]
-#             if t == p:
-#                 correct_cum += 1
-#         perfect_acc_list.append(correct_cum / batch_size)
-#     return correct_rate.item(), perfect_acc_list
-
 def accuracy(output, target, batch_size, v=None):
     '''
     Computes the accuracy of top1 prediction
@@ -209,7 +170,7 @@ def accuracy(output, target, batch_size, v=None):
     target: (seq_length*batch_size)
     '''
     
-    pad_mask = (target != v['<pad>']) # padはFalse, それ以外はTrue
+    pad_mask = (target != v['<pad>']) 
     true_pos = torch.nonzero(pad_mask).squeeze().tolist()
     out_extracted = output[true_pos]
     t_extracted = target[true_pos]
@@ -258,7 +219,7 @@ def calc_topk_perfect_acc(x, target, batch_size, EOS):
     return correct_cum / batch_size
     
 
-def MW_checker(mol, threshold:int = 500):
+def MW_checker(mol, threshold:int = 750):
     MW = Descriptors.ExactMolWt(mol)
     if MW > threshold:
         return False
@@ -278,20 +239,4 @@ def torch_fix_seed(seed=42):
     torch.cuda.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
     torch.use_deterministic_algorithms = True
-    
-
-# 例えばimport utils とした場合、そのutils.__name__ にはモジュール名（ファイル名）が格納される
-# このファイルをimportで呼び出した場合、print(utils.__name__) の出力結果は'utils'
-# ただし、importではなくコマンドラインで直接実行された場合は__name__ に __main__ が格納される
-# よって、以下はimportされたときには実行されず、コマンドラインで実行されたときにだけ動く
-if __name__ == '__main__':
-    smiles_list = read_smilesset('Data/input/250k_rndm_zinc_drugs_clean.smi')
-    vocab = []
-    for smiles in tqdm(smiles_list):
-        p = parse_smiles(smiles)
-        vocab.extend(p)
-
-    vocab = list(set(vocab))
-    vocab.sort()
-    print(vocab)
     
