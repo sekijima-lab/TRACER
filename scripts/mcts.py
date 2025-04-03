@@ -165,7 +165,7 @@ class ParseSelectMCTS(MCTS):
         
         else:
             # make reaction path
-            while self.current_node.depth > 0:
+            while self.current_node.depth >= 0:
                 reaction_path.insert(0, f'{self.current_node.template}.{self.current_node.smi}')
                 self.current_node = self.current_node.parent
             self.current_node = tmp
