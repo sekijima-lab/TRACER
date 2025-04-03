@@ -328,7 +328,7 @@ def main(cfg: DictConfig):
     ckpt = cfg['mcts']['ckpt_Transformer']
     model = Transformer(d_model=d_model, nhead=nhead, num_encoder_layers=num_encoder_layers, num_decoder_layers=num_decoder_layers,
                         dim_feedforward=dim_ff,vocab=v, dropout=dropout, device=device).to(device)
-    ckpt = torch.load(hydra.utils.get_original_cwd() + cfg['model']['ckpt'])
+    ckpt = torch.load(hydra.utils.get_original_cwd() + cfg['model']['ckpt'], map_location=device)
     model.load_state_dict(ckpt['model_state_dict'])
     model.eval()
     
