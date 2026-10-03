@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+outputs/
+mcts_out/
+ckpts/checkpoints_*/
+ckpts/GCN/*runtime*.pth
+ckpts/Transformer/*.pth
+validation/cli-gcn-*/
+validation/cli-smoke-output/
+*.so
+*.egg-info/
+build/

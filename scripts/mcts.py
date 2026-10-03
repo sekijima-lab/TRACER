@@ -1,8 +1,8 @@
+from tracer_runtime.runtime import get_device, announce
 import os
 import numpy as np
 import pandas as pd
 import json
-import pickle
 import datetime
 
 import hydra
@@ -287,6 +287,7 @@ class ParseSelectMCTS(MCTS):
 
 @hydra.main(config_path=None, config_name='config', version_base=None)
 def main(cfg: DictConfig):
+    announce()
     date = datetime.datetime.now().strftime('%Y%m%d')
     num = 1
     while True:
@@ -298,7 +299,7 @@ def main(cfg: DictConfig):
             os.makedirs(out_dir, exist_ok=True)
             break
     print(f'{out_dir} was created.')
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    device = get_device()
     
     ''' preprocess '''
     src_train_path = hydra.utils.get_original_cwd()+cfg['mcts']['src_train']
@@ -328,7 +329,7 @@ def main(cfg: DictConfig):
     ckpt = cfg['mcts']['ckpt_Transformer']
     model = Transformer(d_model=d_model, nhead=nhead, num_encoder_layers=num_encoder_layers, num_decoder_layers=num_decoder_layers,
                         dim_feedforward=dim_ff,vocab=v, dropout=dropout, device=device).to(device)
-    ckpt = torch.load(hydra.utils.get_original_cwd() + cfg['model']['ckpt'], map_location=device)
+    ckpt = torch.load(hydra.utils.get_original_cwd() + cfg['model']['ckpt'], map_location=device, weights_only=True)
     model.load_state_dict(ckpt['model_state_dict'])
     model.eval()
     
@@ -341,7 +342,7 @@ def main(cfg: DictConfig):
                                 n_conv_hidden = n_conv_hidden,
                                 n_mlp_hidden = n_mlp_hidden,
                                 dropout = dropout).to(device)
-    GCN_model.load_state_dict(torch.load(hydra.utils.get_original_cwd() + ckpt_GCN))
+    GCN_model.load_state_dict(torch.load(hydra.utils.get_original_cwd() + ckpt_GCN, map_location=device, weights_only=True))
     GCN_model.eval()
     
     '''MCTS'''

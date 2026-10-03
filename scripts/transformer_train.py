@@ -1,5 +1,7 @@
+from tracer_runtime.runtime import get_device, announce, metadata
 import sys
 import os
+import json
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 
@@ -26,7 +28,8 @@ date = datetime.datetime.now().strftime('%Y%m%d')
 torch_fix_seed()
 
 def train(cfg):
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    announce()
+    device = get_device()
     num = 1
     while True:
         ckpt_dir = hydra.utils.get_original_cwd()+f'/ckpts/checkpoints_{date}_{num}'
@@ -37,6 +40,8 @@ def train(cfg):
             os.makedirs(ckpt_dir, exist_ok=True)
             break
     print(f'{ckpt_dir} was created.')
+    with open(os.path.join(ckpt_dir, 'runtime.json'), 'w') as f:
+        json.dump(metadata(), f, indent=2)
     
     data_dict = make_counter(src_train_path=hydra.utils.get_original_cwd()+cfg['train']['src_train'],
                              tgt_train_path=hydra.utils.get_original_cwd()+cfg['train']['tgt_train'],
@@ -57,7 +62,7 @@ def train(cfg):
     model = Transformer(d_model=d_model, nhead=nhead, num_encoder_layers=num_encoder_layers, num_decoder_layers=num_decoder_layers,
                         dim_feedforward=dim_ff,vocab=v, dropout=dropout, device=device).to(device)
     cudnn.benchmark = True
-    if device == 'cuda':
+    if device.type == 'cuda':
         model = torch.nn.DataParallel(model) # make parallel
         torch.backends.cudnn.benchmark = True
     
@@ -91,7 +96,7 @@ def train(cfg):
     
     step = 0
     tgt_mask = nn.Transformer.generate_square_subsequent_mask(data_dict['tgt_max_len']-1).to(device)
-    scaler = torch.cuda.amp.GradScaler()
+    scaler = torch.amp.GradScaler('cuda', enabled=device.type == 'cuda')
     total_loss = 0
     accum_loss = 0
     model.train()
@@ -102,7 +107,7 @@ def train(cfg):
             src, tgt = data[0].to(device).permute(1, 0), data[1].to(device).permute(1, 0)
             tgt_input = tgt[:-1, :] # (seq, batch)
             tgt_output = tgt[1:, :] # shifted right
-            with torch.amp.autocast('cuda'):
+            with torch.amp.autocast('cuda', enabled=device.type == 'cuda'):
                 outputs = model(src=src, tgt=tgt_input, tgt_mask=tgt_mask,
                                 src_pad_mask=True, tgt_pad_mask=True, memory_pad_mask=True) # out: (seq_length, batch_size, vocab_size)
                 loss = (criterion(outputs.reshape(-1, v.__len__()), tgt_output.reshape(-1)).sum() / len(data[0])) / accum_count
@@ -160,6 +165,7 @@ def train(cfg):
             
 @hydra.main(config_path=None, config_name='config', version_base=None)
 def main(cfg: DictConfig):
+    announce()
     train(cfg)
 
 

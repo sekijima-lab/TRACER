@@ -1,0 +1,11 @@
+{
+  "src": 0.0,
+  "tgt": 0.0,
+  "logits": 0.0,
+  "argmax": 0.0,
+  "loss": 4.76837158203125e-07,
+  "gradient": 7.510185241699219e-06,
+  "weights": 2.9802322387695312e-08,
+  "lr": 0.0,
+  "generation_exact": true
+}

@@ -1,0 +1,7 @@
+{
+  "both_modes_transformer_training": true,
+  "both_modes_gcn_training": true,
+  "limited_batches_and_steps": true,
+  "restricted_reload_and_transformer_optimizer_resume": true,
+  "runtime_mode_records": true
+}

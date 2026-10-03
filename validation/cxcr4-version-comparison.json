@@ -1,0 +1,7 @@
+{
+  "trained_sklearn": "1.1.1",
+  "reference_env_sklearn": "1.2.2",
+  "molecules": 725,
+  "probability_max_abs": 2.220446049250313e-16,
+  "pass": true
+}

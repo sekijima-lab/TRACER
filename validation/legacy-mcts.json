@@ -1,0 +1,467 @@
+[
+  {
+    "seed": 1729,
+    "input": "OC1CCc2cc(F)ccc21",
+    "step": 2,
+    "valid": 6,
+    "invalid": 0,
+    "templates": [
+      "[0]",
+      "[447]",
+      "[239]",
+      "[31]",
+      "[98]"
+    ],
+    "best_score": 0.08940397350993377,
+    "molecules": [
+      {
+        "key": [
+          1,
+          "CS(=O)(=O)OC1CCc2cc(F)ccc21",
+          "None.OC1CCc2cc(F)ccc21.[0].CS(=O)(=O)OC1CCc2cc(F)ccc21"
+        ],
+        "score": 0.07947019867549669
+      },
+      {
+        "key": [
+          1,
+          "Fc1ccc2c(c1)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2"
+        ],
+        "score": 0.013245033112582781
+      },
+      {
+        "key": [
+          2,
+          "O=Cc1c(F)ccc2c1CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[239].O=Cc1c(F)ccc2c1CCC2"
+        ],
+        "score": 0.012913907284768211
+      },
+      {
+        "key": [
+          2,
+          "CC(=O)c1cc2c(cc1F)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[31].CC(=O)c1cc2c(cc1F)CCC2"
+        ],
+        "score": 0.0
+      },
+      {
+        "key": [
+          2,
+          "CCC(=O)c1cc2c(cc1F)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[31].CCC(=O)c1cc2c(cc1F)CCC2"
+        ],
+        "score": 0.0
+      },
+      {
+        "key": [
+          2,
+          "Fc1cc2c(cc1Br)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[98].Fc1cc2c(cc1Br)CCC2"
+        ],
+        "score": 0.004415011037527594
+      }
+    ]
+  },
+  {
+    "seed": 1729,
+    "input": "c1ccc2c(c1)CC1CNCCN21",
+    "step": 2,
+    "valid": 9,
+    "invalid": 0,
+    "templates": [
+      "[73]",
+      "[567]",
+      "[99]",
+      "[242]",
+      "[215]",
+      "[84]"
+    ],
+    "best_score": 0.3799116997792494,
+    "molecules": [
+      {
+        "key": [
+          1,
+          "O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.3799116997792494
+      },
+      {
+        "key": [
+          1,
+          "c1ccc(CCN2CCN3c4ccccc4CC3C2)cc1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].c1ccc(CCN2CCN3c4ccccc4CC3C2)cc1"
+        ],
+        "score": 0.3465783664459161
+      },
+      {
+        "key": [
+          1,
+          "c1ccc(CN2CCN3c4ccccc4CC3C2)cc1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[567].c1ccc(CN2CCN3c4ccccc4CC3C2)cc1"
+        ],
+        "score": 0.30849889624724064
+      },
+      {
+        "key": [
+          1,
+          "FC(F)(F)c1cccc(CN2CCN3c4ccccc4CC3C2)c1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[567].FC(F)(F)c1cccc(CN2CCN3c4ccccc4CC3C2)c1"
+        ],
+        "score": 0.32671081677704195
+      },
+      {
+        "key": [
+          1,
+          "O=S(=O)(c1ccccc1)N1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[99].O=S(=O)(c1ccccc1)N1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.11037527593818985
+      },
+      {
+        "key": [
+          1,
+          "O=S(=O)(c1ccc(F)cc1)N1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[99].O=S(=O)(c1ccc(F)cc1)N1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.09918006937874488
+      },
+      {
+        "key": [
+          2,
+          "NCCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1.[242].NCCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.3277041942604857
+      },
+      {
+        "key": [
+          2,
+          "O=C1c2ccccc2CN1CCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1.[215].O=C1c2ccccc2CN1CCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.33962472406181016
+      },
+      {
+        "key": [
+          2,
+          "O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1.[84].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.3799116997792494
+      }
+    ]
+  },
+  {
+    "seed": 19,
+    "input": "OC1CCc2cc(F)ccc21",
+    "step": 2,
+    "valid": 6,
+    "invalid": 0,
+    "templates": [
+      "[0]",
+      "[447]",
+      "[239]",
+      "[31]",
+      "[98]"
+    ],
+    "best_score": 0.08940397350993377,
+    "molecules": [
+      {
+        "key": [
+          1,
+          "CS(=O)(=O)OC1CCc2cc(F)ccc21",
+          "None.OC1CCc2cc(F)ccc21.[0].CS(=O)(=O)OC1CCc2cc(F)ccc21"
+        ],
+        "score": 0.07947019867549669
+      },
+      {
+        "key": [
+          1,
+          "Fc1ccc2c(c1)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2"
+        ],
+        "score": 0.013245033112582781
+      },
+      {
+        "key": [
+          2,
+          "O=Cc1c(F)ccc2c1CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[239].O=Cc1c(F)ccc2c1CCC2"
+        ],
+        "score": 0.012913907284768211
+      },
+      {
+        "key": [
+          2,
+          "CC(=O)c1cc2c(cc1F)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[31].CC(=O)c1cc2c(cc1F)CCC2"
+        ],
+        "score": 0.0
+      },
+      {
+        "key": [
+          2,
+          "CCC(=O)c1cc2c(cc1F)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[31].CCC(=O)c1cc2c(cc1F)CCC2"
+        ],
+        "score": 0.0
+      },
+      {
+        "key": [
+          2,
+          "Fc1cc2c(cc1Br)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[98].Fc1cc2c(cc1Br)CCC2"
+        ],
+        "score": 0.004415011037527594
+      }
+    ]
+  },
+  {
+    "seed": 19,
+    "input": "c1ccc2c(c1)CC1CNCCN21",
+    "step": 2,
+    "valid": 9,
+    "invalid": 0,
+    "templates": [
+      "[73]",
+      "[567]",
+      "[99]",
+      "[242]",
+      "[215]",
+      "[84]"
+    ],
+    "best_score": 0.3799116997792494,
+    "molecules": [
+      {
+        "key": [
+          1,
+          "O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.3799116997792494
+      },
+      {
+        "key": [
+          1,
+          "c1ccc(CCN2CCN3c4ccccc4CC3C2)cc1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].c1ccc(CCN2CCN3c4ccccc4CC3C2)cc1"
+        ],
+        "score": 0.3465783664459161
+      },
+      {
+        "key": [
+          1,
+          "c1ccc(CN2CCN3c4ccccc4CC3C2)cc1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[567].c1ccc(CN2CCN3c4ccccc4CC3C2)cc1"
+        ],
+        "score": 0.3084988962472406
+      },
+      {
+        "key": [
+          1,
+          "FC(F)(F)c1cccc(CN2CCN3c4ccccc4CC3C2)c1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[567].FC(F)(F)c1cccc(CN2CCN3c4ccccc4CC3C2)c1"
+        ],
+        "score": 0.3267108167770419
+      },
+      {
+        "key": [
+          1,
+          "O=S(=O)(c1ccccc1)N1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[99].O=S(=O)(c1ccccc1)N1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.11037527593818985
+      },
+      {
+        "key": [
+          1,
+          "O=S(=O)(c1ccc(F)cc1)N1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[99].O=S(=O)(c1ccc(F)cc1)N1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.09918006937874488
+      },
+      {
+        "key": [
+          2,
+          "NCCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1.[242].NCCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.3277041942604857
+      },
+      {
+        "key": [
+          2,
+          "O=C1c2ccccc2CN1CCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1.[215].O=C1c2ccccc2CN1CCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.33962472406181016
+      },
+      {
+        "key": [
+          2,
+          "O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1.[84].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.3799116997792494
+      }
+    ]
+  },
+  {
+    "seed": 73,
+    "input": "OC1CCc2cc(F)ccc21",
+    "step": 2,
+    "valid": 6,
+    "invalid": 0,
+    "templates": [
+      "[0]",
+      "[447]",
+      "[239]",
+      "[31]",
+      "[98]"
+    ],
+    "best_score": 0.08940397350993377,
+    "molecules": [
+      {
+        "key": [
+          1,
+          "CS(=O)(=O)OC1CCc2cc(F)ccc21",
+          "None.OC1CCc2cc(F)ccc21.[0].CS(=O)(=O)OC1CCc2cc(F)ccc21"
+        ],
+        "score": 0.07947019867549669
+      },
+      {
+        "key": [
+          1,
+          "Fc1ccc2c(c1)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2"
+        ],
+        "score": 0.013245033112582781
+      },
+      {
+        "key": [
+          2,
+          "O=Cc1c(F)ccc2c1CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[239].O=Cc1c(F)ccc2c1CCC2"
+        ],
+        "score": 0.012913907284768211
+      },
+      {
+        "key": [
+          2,
+          "CC(=O)c1cc2c(cc1F)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[31].CC(=O)c1cc2c(cc1F)CCC2"
+        ],
+        "score": 0.0
+      },
+      {
+        "key": [
+          2,
+          "CCC(=O)c1cc2c(cc1F)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[31].CCC(=O)c1cc2c(cc1F)CCC2"
+        ],
+        "score": 0.0
+      },
+      {
+        "key": [
+          2,
+          "Fc1cc2c(cc1Br)CCC2",
+          "None.OC1CCc2cc(F)ccc21.[447].Fc1ccc2c(c1)CCC2.[98].Fc1cc2c(cc1Br)CCC2"
+        ],
+        "score": 0.004415011037527594
+      }
+    ]
+  },
+  {
+    "seed": 73,
+    "input": "c1ccc2c(c1)CC1CNCCN21",
+    "step": 2,
+    "valid": 9,
+    "invalid": 0,
+    "templates": [
+      "[73]",
+      "[567]",
+      "[99]",
+      "[242]",
+      "[215]",
+      "[84]"
+    ],
+    "best_score": 0.3799116997792494,
+    "molecules": [
+      {
+        "key": [
+          1,
+          "O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.3799116997792494
+      },
+      {
+        "key": [
+          1,
+          "c1ccc(CCN2CCN3c4ccccc4CC3C2)cc1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].c1ccc(CCN2CCN3c4ccccc4CC3C2)cc1"
+        ],
+        "score": 0.3465783664459161
+      },
+      {
+        "key": [
+          1,
+          "c1ccc(CN2CCN3c4ccccc4CC3C2)cc1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[567].c1ccc(CN2CCN3c4ccccc4CC3C2)cc1"
+        ],
+        "score": 0.3084988962472406
+      },
+      {
+        "key": [
+          1,
+          "FC(F)(F)c1cccc(CN2CCN3c4ccccc4CC3C2)c1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[567].FC(F)(F)c1cccc(CN2CCN3c4ccccc4CC3C2)c1"
+        ],
+        "score": 0.3267108167770419
+      },
+      {
+        "key": [
+          1,
+          "O=S(=O)(c1ccccc1)N1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[99].O=S(=O)(c1ccccc1)N1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.11037527593818985
+      },
+      {
+        "key": [
+          1,
+          "O=S(=O)(c1ccc(F)cc1)N1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[99].O=S(=O)(c1ccc(F)cc1)N1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.09918006937874488
+      },
+      {
+        "key": [
+          2,
+          "NCCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1.[242].NCCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.3277041942604857
+      },
+      {
+        "key": [
+          2,
+          "O=C1c2ccccc2CN1CCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1.[215].O=C1c2ccccc2CN1CCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.33962472406181016
+      },
+      {
+        "key": [
+          2,
+          "O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1",
+          "None.c1ccc2c(c1)CC1CNCCN21.[73].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1.[84].O=C1c2ccccc2C(=O)N1CCN1CCN2c3ccccc3CC2C1"
+        ],
+        "score": 0.3799116997792494
+      }
+    ]
+  }
+]

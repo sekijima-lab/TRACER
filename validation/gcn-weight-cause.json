@@ -1,0 +1,156 @@
+[
+  {
+    "name": "graphconv1.bias",
+    "weight_max": 0.0007776468992233276,
+    "gradient_max": 5.51566481590271e-05,
+    "gradient_at_max_weight_old": 6.295740604400635e-07,
+    "gradient_at_max_weight_new": -2.384185791015625e-07
+  },
+  {
+    "name": "graphconv_hidden.0.lin.weight",
+    "weight_max": 0.0007546693086624146,
+    "gradient_max": 1.773238182067871e-06,
+    "gradient_at_max_weight_old": 5.653753873957612e-07,
+    "gradient_at_max_weight_new": -9.421678726084792e-08
+  },
+  {
+    "name": "graphconv_hidden.0.bias",
+    "weight_max": 0.0006981495535001159,
+    "gradient_max": 1.6689300537109375e-06,
+    "gradient_at_max_weight_old": 3.6013079807162285e-07,
+    "gradient_at_max_weight_new": -3.39350663125515e-08
+  },
+  {
+    "name": "mlp_out.weight",
+    "weight_max": 6.338022649288177e-05,
+    "gradient_max": 2.960674464702606e-06,
+    "gradient_at_max_weight_old": -2.9099586629222074e-10,
+    "gradient_at_max_weight_new": 1.4965596539795456e-09
+  },
+  {
+    "name": "mlp_hidden.1.weight",
+    "weight_max": 2.2456049919128418e-05,
+    "gradient_max": 1.7881393432617188e-06,
+    "gradient_at_max_weight_old": 2.129501837089265e-07,
+    "gradient_at_max_weight_new": 8.90365612349342e-08
+  },
+  {
+    "name": "mlp_hidden.0.bias",
+    "weight_max": 2.181529998779297e-05,
+    "gradient_max": 4.313187673687935e-08,
+    "gradient_at_max_weight_old": -6.402842700481415e-10,
+    "gradient_at_max_weight_new": -5.820766091346741e-11
+  },
+  {
+    "name": "mlp_hidden.2.weight",
+    "weight_max": 7.212162017822266e-06,
+    "gradient_max": 1.8253922462463379e-06,
+    "gradient_at_max_weight_old": 1.0411442730173803e-07,
+    "gradient_at_max_weight_new": 1.3369758278258814e-07
+  },
+  {
+    "name": "mlp_hidden.0.weight",
+    "weight_max": 3.1739473342895508e-06,
+    "gradient_max": 2.250075340270996e-06,
+    "gradient_at_max_weight_old": 3.651418296612974e-07,
+    "gradient_at_max_weight_new": 5.238601943347021e-07
+  },
+  {
+    "name": "bn1.weight",
+    "weight_max": 1.1920928955078125e-07,
+    "gradient_max": 3.1888484954833984e-06,
+    "gradient_at_max_weight_old": -1.1635394912445918e-05,
+    "gradient_at_max_weight_new": -1.1159337191202212e-05
+  },
+  {
+    "name": "bn1.bias",
+    "weight_max": 4.842877388000488e-08,
+    "gradient_max": 2.773245796561241e-06,
+    "gradient_at_max_weight_old": 5.98980113863945e-06,
+    "gradient_at_max_weight_new": 5.5913460528245196e-06
+  },
+  {
+    "name": "graphconv1.lin.weight",
+    "weight_max": 1.4901161193847656e-08,
+    "gradient_max": 5.227327346801758e-05,
+    "gradient_at_max_weight_old": 0.005570887587964535,
+    "gradient_at_max_weight_new": 0.005571956746280193
+  },
+  {
+    "name": "mlp_hidden.1.bias",
+    "weight_max": 1.4901161193847656e-08,
+    "gradient_max": 7.450580596923828e-07,
+    "gradient_at_max_weight_old": 0.0057906112633645535,
+    "gradient_at_max_weight_new": 0.005790552590042353
+  },
+  {
+    "name": "mlp_hidden.2.bias",
+    "weight_max": 1.4901161193847656e-08,
+    "gradient_max": 5.736947059631348e-07,
+    "gradient_at_max_weight_old": 0.005626040976494551,
+    "gradient_at_max_weight_new": 0.005625806748867035
+  },
+  {
+    "name": "bn_mlp.1.bias",
+    "weight_max": 1.4901161193847656e-08,
+    "gradient_max": 6.742775440216064e-07,
+    "gradient_at_max_weight_old": -0.005487065762281418,
+    "gradient_at_max_weight_new": -0.005486753303557634
+  },
+  {
+    "name": "mlp_out.bias",
+    "weight_max": 3.725290298461914e-09,
+    "gradient_max": 3.6600977182388306e-07,
+    "gradient_at_max_weight_old": 0.0015821586130186915,
+    "gradient_at_max_weight_new": 0.0015822125133126974
+  },
+  {
+    "name": "bn_mlp.0.bias",
+    "weight_max": 9.313225746154785e-10,
+    "gradient_max": 5.848705768585205e-07,
+    "gradient_at_max_weight_old": -9.955186396837234e-05,
+    "gradient_at_max_weight_new": -9.920104639604688e-05
+  },
+  {
+    "name": "bn_conv.0.bias",
+    "weight_max": 1.1641532182693481e-10,
+    "gradient_max": 1.6838312149047852e-06,
+    "gradient_at_max_weight_old": 0.07667866349220276,
+    "gradient_at_max_weight_new": 0.07667826861143112
+  },
+  {
+    "name": "bn_conv.0.weight",
+    "weight_max": 0.0,
+    "gradient_max": 1.1511147022247314e-06,
+    "gradient_at_max_weight_old": -0.030048266053199768,
+    "gradient_at_max_weight_new": -0.030048418790102005
+  },
+  {
+    "name": "bn_mlp.0.weight",
+    "weight_max": 0.0,
+    "gradient_max": 1.5050172805786133e-06,
+    "gradient_at_max_weight_old": 0.04228390380740166,
+    "gradient_at_max_weight_new": 0.042283881455659866
+  },
+  {
+    "name": "bn_mlp.1.weight",
+    "weight_max": 0.0,
+    "gradient_max": 1.218169927597046e-06,
+    "gradient_at_max_weight_old": 0.039474934339523315,
+    "gradient_at_max_weight_new": 0.03947458416223526
+  },
+  {
+    "name": "bn_mlp.2.weight",
+    "weight_max": 0.0,
+    "gradient_max": 6.854534149169922e-07,
+    "gradient_at_max_weight_old": 0.034281861037015915,
+    "gradient_at_max_weight_new": 0.03428216651082039
+  },
+  {
+    "name": "bn_mlp.2.bias",
+    "weight_max": 0.0,
+    "gradient_max": 3.864988684654236e-07,
+    "gradient_at_max_weight_old": 0.03326814994215965,
+    "gradient_at_max_weight_new": 0.03326801583170891
+  }
+]

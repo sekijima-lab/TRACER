@@ -1,0 +1,18 @@
+[
+  {
+    "source": "ckpt_conditional.pth",
+    "source_sha256": "4ceaee8c8ee2249e4573e382a9532405501001ba16b027dcdfeea66f08e0ad9c",
+    "runtime": "ckpt_conditional.runtime.pth",
+    "runtime_sha256": "6459a7a975942b78defff949ae35e2d6f4b9bc1054e58167b58dd5110e0b051d",
+    "source_size": 553123555,
+    "runtime_size": 191188199
+  },
+  {
+    "source": "ckpt_unconditional.pth",
+    "source_sha256": "da3623c02cc0c09c6c0d41b05380c8b43b21711111c26c070628dcc3aa6fed39",
+    "runtime": "ckpt_unconditional.runtime.pth",
+    "runtime_sha256": "7b3d9a36229da47e3e2ba0ecc9c6291414f1763af58dd9e0f69be4b8bf75b467",
+    "source_size": 541131171,
+    "runtime_size": 187191075
+  }
+]

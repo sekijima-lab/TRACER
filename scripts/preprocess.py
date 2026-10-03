@@ -9,8 +9,7 @@ from collections import Counter
 import torch
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
-from torchtext.vocab import vocab
-import torchtext.transforms as T
+from tracer_runtime.vocab import vocab, TokenTransform, load_vocab, save_vocab
 
 class smi_Dataset(Dataset):
     def __init__(self, src, tgt):
@@ -68,22 +67,11 @@ def make_transforms(data_dict, make_vocab: bool = False, vocab_load_path=None):
         v = vocab(counter, min_freq=5, specials=(['<unk>', '<pad>', '<bos>', '<eos>']))
         v.set_default_index(v['<unk>'])
     else:
-        v = torch.load(vocab_load_path)
+        v = load_vocab(vocab_load_path)
     
-    src_transforms = T.Sequential(
-        T.VocabTransform(v),
-        T.ToTensor(padding_value=v['<pad>']),
-        T.PadTransform(max_length=data_dict['src_max_len'], pad_value=v['<pad>']) # srcはbosとeosが不要
-        )
-    
-    tgt_transforms = T.Sequential(
-        T.VocabTransform(v),
-        T.AddToken(token=v['<bos>'], begin=True),
-        T.AddToken(token=v['<eos>'], begin=False),
-        T.ToTensor(padding_value=v['<pad>']),
-        T.PadTransform(max_length=data_dict['tgt_max_len'],pad_value=v['<pad>'])
-        )
-    
+    src_transforms = TokenTransform(v, data_dict['src_max_len'])
+    tgt_transforms = TokenTransform(v, data_dict['tgt_max_len'], target=True)
+
     return src_transforms, tgt_transforms, v
     
 
@@ -137,7 +125,7 @@ def main(cfg: DictConfig):
                             tgt_valid_path=tgt_valid_path)
     
     _, _, v = make_transforms(data_dict=data_dict, make_vocab=True, vocab_load_path=None)
-    torch.save(v, hydra.utils.get_original_cwd()+'/vocab.pth')
+    save_vocab(v, hydra.utils.get_original_cwd()+'/vocab.json')
     print('done.')
 
 if __name__ == '__main__':

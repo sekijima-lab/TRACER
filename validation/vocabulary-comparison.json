@@ -1,0 +1,7 @@
+{
+  "vocabulary_size": 1053,
+  "src_max_length": 222,
+  "tgt_max_length": 244,
+  "all_tokens_exact": true,
+  "batch_single_special_padding_unknown_exact": true
+}

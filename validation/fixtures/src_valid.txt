@@ -1,0 +1,16 @@
+[214] N S ( = O ) ( = O ) C c 1 c c c c ( N c 2 n c n c ( Cl ) n 2 ) c 1
+[138] C C O C ( = O ) C C C ( = O ) c 1 c c c ( C C C C Cl ) c c 1
+[434] C c 1 c c ( O c 2 c c n c ( Cl ) c 2 ) c ( - c 2 c c c c n 2 ) n c 1 C
+[234] C O C ( C C n 1 c c ( [N+] ( = O ) [O-] ) c n 1 ) O C
+[187] C C ( C ) ( C ) O C ( = O ) N 1 C c 2 c c c c c 2 C 2 ( C C N C C 2 ) C 1
+[321] O C c 1 c c ( F ) c c c 1 Br
+[468] O = C c 1 c c c ( - c 2 c c c 3 o c n c 3 c 2 ) c c 1
+[88] C O C ( = O ) C C N C ( = O ) c 1 c c c ( O C ( C C ( C ) C ) c 2 c c c ( - n 3 c n c ( C ( F ) ( F ) F ) c 3 ) c c 2 ) c c 1
+[339] N C C C 1 C C c 2 c c n 3 n c c c 3 c 2 1
+[278] C O c 1 c c 2 c ( N = C ( N C C ( = O ) O C ( C ) ( C ) C ) N c 3 c ( C ) c c c c 3 C ) n c n c 2 c c 1 O C C 1 C C N ( C ) C C 1
+[88] C O C ( = O ) C C C C C ( = O ) O N 1 C ( = O ) C C C 1 = O
+[96] O C C N 1 C C C C C 1
+[478] C C O C ( = O ) C ( C c 1 c c c ( O ) c c 1 ) O C C
+[674] C c 1 c c c ( C ( = O ) N c 2 c c c 3 c ( C ( = O ) O ) c n ( C ( C ) ( C ) C ) c 3 n 2 ) c c 1
+[649] O = C c 1 c c c 2 [nH] c c c 2 c 1
+[800] C C ( C ) ( C ) O C ( = O ) N 1 C C = C ( c 2 c n ( - c 3 c c c c c 3 ) n n 2 ) C C 1

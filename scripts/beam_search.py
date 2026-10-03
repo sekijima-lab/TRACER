@@ -1,3 +1,4 @@
+from tracer_runtime.runtime import get_device, announce
 import os
 import operator
 import itertools
@@ -12,7 +13,7 @@ import rdkit.Chem as Chem
 from rdkit.Chem import AllChem
 
 import torch
-import torchtext.vocab.vocab as Vocab
+from tracer_runtime.vocab import Vocabulary as Vocab
 import torch.nn.functional as F
 
 from Model.Transformer.model import Transformer
@@ -21,7 +22,7 @@ from Utils.utils import smi_tokenizer
 from Model.GCN import network
 from Model.GCN.utils import template_prediction, check_templates
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = get_device()
 
 with open('./data/label_template.json') as f:
     r_dict = json.load(f)
@@ -235,7 +236,7 @@ def translate(cfg:DictConfig):
     dim_ff = cfg['model']['dim_ff'] 
     model = Transformer(d_model=d_model, nhead=nhead, num_encoder_layers=num_encoder_layers, num_decoder_layers=num_decoder_layers,
                         dim_feedforward=dim_ff,vocab=v, dropout=dropout, device=device).to(device)
-    ckpt = torch.load(hydra.utils.get_original_cwd() + cfg['model']['ckpt'], map_location=device)
+    ckpt = torch.load(hydra.utils.get_original_cwd() + cfg['model']['ckpt'], map_location=device, weights_only=True)
     model.load_state_dict(ckpt['model_state_dict'])
     model.eval()
     
@@ -254,7 +255,7 @@ def translate(cfg:DictConfig):
                                  n_mlp_hidden = n_mlp_hidden,
                                  dropout = dropout).to(device)
     GCN_ckpt = hydra.utils.get_original_cwd() + cfg['translate']['GCN_ckpt']
-    GCN_model.load_state_dict(torch.load(GCN_ckpt))
+    GCN_model.load_state_dict(torch.load(GCN_ckpt, map_location=device, weights_only=True))
     GCN_model.eval()
     
     out_dir = cfg['translate']['out_dir']
@@ -294,6 +295,7 @@ def translate(cfg:DictConfig):
 
 @hydra.main(config_path=None, config_name='config', version_base=None)
 def main(cfg: DictConfig):
+    announce()
     translate(cfg)
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 import math
 
 from hydra.core.config_store import ConfigStore
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 @dataclass
 class PreProcess:
@@ -20,7 +20,7 @@ class ModelConfig:
     nhead: int = 8
     dropout: float = 0.1
     dim_ff: int = 2048
-    ckpt:str = '/ckpts/Transformer/ckpt_conditional.pth'
+    ckpt:str = '/ckpts/Transformer/ckpt_conditional.runtime.pth'
 
 @dataclass
 class TrainConfig:
@@ -83,7 +83,7 @@ class MCTSConfig:
     out_dir: str = '/mcts_out'
     ucb_c: float = 1/math.sqrt(2)
     reward_name: str = 'DRD2'  # 'DRD2' or 'AKT1' or 'CXCR4'
-    ckpt_Transformer: str = '/ckpts/Transformer/ckpt_conditional.pth'
+    ckpt_Transformer: str = '/ckpts/Transformer/ckpt_conditional.runtime.pth'
     ckpt_GCN: str = '/ckpts/GCN/GCN.pth'
     beam_width:int = 10
     nbest:int = 10
@@ -93,12 +93,12 @@ class MCTSConfig:
 
 @dataclass
 class Config:
-    prep: PreProcess = PreProcess()
-    model: ModelConfig = ModelConfig()
-    train: TrainConfig = TrainConfig()
-    translate: TranslateConfig = TranslateConfig()
-    GCN_train: GCN_TrainConfig = GCN_TrainConfig()
-    mcts: MCTSConfig = MCTSConfig()
+    prep: PreProcess = field(default_factory=PreProcess)
+    model: ModelConfig = field(default_factory=ModelConfig)
+    train: TrainConfig = field(default_factory=TrainConfig)
+    translate: TranslateConfig = field(default_factory=TranslateConfig)
+    GCN_train: GCN_TrainConfig = field(default_factory=GCN_TrainConfig)
+    mcts: MCTSConfig = field(default_factory=MCTSConfig)
 
 cs = ConfigStore.instance()
 cs.store(name="config", node=Config)

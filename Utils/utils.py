@@ -1,3 +1,4 @@
+from tracer_runtime.runtime import get_device, announce, metadata
 import numpy as np
 import math
 from tqdm import tqdm
@@ -13,7 +14,7 @@ from rdkit.Chem import Descriptors
 
 import torch
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = get_device()
 
 def smi_tokenizer(smi):
     '''
@@ -112,7 +113,7 @@ class EarlyStopping:
         self.counter = 0            #現在のカウンタ値
         self.best_score = None      #ベストスコア
         self.early_stop = False     #ストップフラグ
-        self.val_loss_min = np.Inf   #前回のベストスコア記憶用
+        self.val_loss_min = np.inf   #前回のベストスコア記憶用
         self.path = ckpt_dir         #ベストモデル格納path
 
     def __call__(self, val_loss, step, optimizer, cur_loss, model):
@@ -139,7 +140,7 @@ class EarlyStopping:
             self.counter = 0  #ストップカウンタリセット
 
     def checkpoint(self, val_loss, step, optimizer, cur_loss, model):
-        torch.save({'step': step,
+        torch.save({'runtime': metadata(), 'step': step,
                     'model_state_dict': model.state_dict(),
                     'optimizer_state_dict': optimizer.state_dict(),
                     'loss': cur_loss,}, f'{self.path}/ckpt_{step+1}.pth')

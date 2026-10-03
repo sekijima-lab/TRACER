@@ -1,0 +1,16 @@
+{
+  "fingerprints": 0.0,
+  "qed": 2.220446049250313e-16,
+  "qsar_AKT1": 2.220446049250313e-16,
+  "qsar_CXCR4": 2.220446049250313e-16,
+  "qsar_DRD2": 2.220446049250313e-16,
+  "graph_x": 0.0,
+  "graph_edge_index": 0.0,
+  "graph_edge_attr": 0.0,
+  "graph_batch": 0.0,
+  "gcn_logits": 1.9073486328125e-06,
+  "gcn_top10": 0.0,
+  "gcn_loss": 9.5367431640625e-06,
+  "gcn_gradient": 5.51566481590271e-05,
+  "gcn_weights": 0.0007776468992233276
+}

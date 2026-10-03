@@ -11,7 +11,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.optim.lr_scheduler import _LRScheduler
 from torch.nn.init import xavier_uniform_
-import torchtext.vocab.vocab as Vocab
+from tracer_runtime.vocab import Vocabulary as Vocab
+from tracer_runtime.attention import CompatibleMultiheadAttention
+from tracer_runtime.normalization import CompatibleLayerNorm
+from tracer_runtime.runtime import old_compatible as default_math_mode
 
 
 
@@ -58,7 +61,7 @@ class TransformerLR(_LRScheduler):
         """Initialize class."""
         self.warmup_epochs = warmup_epochs
         self.normalize = self.warmup_epochs**0.5
-        super().__init__(optimizer, last_epoch, verbose)
+        super().__init__(optimizer, last_epoch)
 
     def get_lr(self):
         """Return adjusted learning rate."""
@@ -72,7 +75,7 @@ class Transformer(nn.Module):
     def __init__(self, d_model: int = 256, nhead: int = 8, num_encoder_layers: int = 4, num_decoder_layers: int =4,
                  dim_feedforward: int = 2048, dropout: float = 0.1, activation: Union[str, Callable[[Tensor], Tensor]] = F.relu,
                  vocab: Vocab = None, layer_norm_eps: float = 1e-5, batch_first: bool = False, norm_first: bool = False,
-                 device=None, dtype=None) -> None:
+                 device=None, dtype=None, old_compatible=None) -> None:
         factory_kwargs = {'device': device, 'dtype': dtype}
         super().__init__()
 
@@ -80,6 +83,7 @@ class Transformer(nn.Module):
             raise RuntimeError("set vocab: torch.vocab.vocab")
         
         # INFO
+        self.old_compatible = default_math_mode() if old_compatible is None else old_compatible
         self.model_type = "Transformer"
         self.vocab = vocab
         num_tokens = vocab.__len__()
@@ -105,6 +109,14 @@ class Transformer(nn.Module):
         
         self.out = nn.Linear(d_model, num_tokens)
         
+        if self.old_compatible:
+            for parent in list(self.modules()):
+                for name,child in list(parent._modules.items()):
+                    if isinstance(child, nn.MultiheadAttention):
+                        with torch.random.fork_rng(devices=[]):
+                            parent._modules[name] = CompatibleMultiheadAttention(child.embed_dim, child.num_heads, dropout=child.dropout, device=device, dtype=dtype)
+                    elif isinstance(child, nn.LayerNorm):
+                        parent._modules[name] = CompatibleLayerNorm(child.normalized_shape, eps=child.eps, device=device, dtype=dtype)
         self._reset_parameters()
         self.d_model = d_model
         self.nhead = nhead

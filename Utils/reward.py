@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-import pickle
+from tracer_runtime.forest import NumericForest
 import hydra
 
 import warnings
@@ -15,8 +15,9 @@ def getReward(name):
     if name == "QED":
         return QEDReward()
     else:
-        with open(hydra.utils.get_original_cwd() + f'/Model/QSAR/qsar_{name}_optimized.pkl', mode='rb') as f:
-            qwar_model = pickle.load(f)
+        if name not in {'AKT1', 'DRD2', 'CXCR4'}:
+            raise ValueError('Unknown reward model')
+        qwar_model = NumericForest(hydra.utils.get_original_cwd() + f'/Model/QSAR/qsar_{name}_optimized.npz')
         return QSAR_Reward(qwar_model)
 
 class Reward:

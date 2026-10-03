@@ -1,1 +1,2 @@
-tqdm==4.66.4
+# Use the maintained runtime lock for the historical tqdm tests.
+-r ../requirements.txt

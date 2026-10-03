@@ -6,25 +6,44 @@ For a comprehensive description of the TRACER framework itself, please refer to 
 
 Nakamura, S., Yasuo, N. & Sekijima, M. Molecular optimization using a conditional transformer for reaction-aware compound exploration with reinforcement learning. Commun Chem 8, 40 (2025). DOI: https://doi.org/10.1038/s42004-025-01437-x
 
+## Maintained branch and validation scope
+
+`main` is retained for the historical paper-reproduction version. This
+`security/modern-runtime` branch updates the runtime and is **not intended to
+be merged into main**. The validated scope is macOS ARM64 CPU float32, the bundled
+GCN/QSAR models and the published conditional Transformer. This does not establish
+reproduction of the author's Linux/CUDA environment or full training runs.
+
+Old-compatible math is the default: historical attention scaling, scalar-libm
+softmax, eight-lane LayerNorm statistics and separate BatchNorm affine operations.
+The compiled extension uses system libm and current tensor operators; it does not
+load a historical PyTorch library. First-order gradients are supported. AMP,
+non-CPU float32 and higher-order derivatives are not supported in this mode.
+Use `TRACER_OLD_COMPATIBLE=0` for standard current PyTorch kernels and optionally
+`TRACER_DEVICE=cuda`; GPU execution has not been validated.
+Runtime/version/mode information is printed, saved alongside training outputs and
+included in newly saved Transformer checkpoints. See [validation report](validation/REPORT.md).
+
 ## Installation
 
-To set up the environment for running TRACER, follow these steps to create a conda environment with the necessary dependencies:
+Create a new environment; leave historical research environments unchanged.
+Python 3.12.15 and a C compiler are required for the validated setup.
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/sekijima-lab/TRACER.git
-   cd TRACER
-   ```
+```bash
+uv --no-config venv --python /path/to/python3.12.15 .venv
+source .venv/bin/activate
+uv --no-config pip install -r requirements.txt
+uv --no-config pip install --no-build-isolation --no-deps -e .
+uv --no-config pip check
+export PYTHONPATH="$PWD:$PWD/Model${PYTHONPATH:+:$PYTHONPATH}"
+python -m unittest discover -s tests -p 'test_*.py' -v
+```
 
-2. Create a conda environment using the provided `env.yml`:
-   ```
-   conda env create -f env.yml
-   ```
-
-3. Activate the conda environment:
-   ```
-   conda activate tracer
-   ```
+The complete lock has 46 PyPI dependencies, including PyTorch 2.14.1, PyG
+2.8.0.post1, NumPy 2.5.3, pandas 3.0.6, scikit-learn 1.9.1 and RDKit 2026.3.6.
+The local compiled runtime is installed separately. torchtext is replaced by an
+ordered JSON vocabulary and native tensor padding. The original environment is
+archived in [validation/legacy-environment.md](validation/legacy-environment.md).
 
 ## Setup Environment Variable
 
@@ -43,22 +62,26 @@ Please note that you need to run this command every time you start a new termina
 
 ## Download Model Parameters
 
-Please download trained weights for the Transformer from [Figshare here](https://figshare.com/articles/software/Weights_of_conditional_unconditional_Transformer/25853551), and place the weights in the `ckpts/Transformer/` directory.
+The author's [Figshare checkpoint files](https://figshare.com/articles/software/Weights_of_conditional_unconditional_Transformer/25853551)
+contain OmegaConf objects and cannot be loaded by the maintained tensor-only
+loader. Convert the fixed published files **once**, offline, in an isolated
+historical Python 3.10 reference environment. The conversion script requires an
+exact source SHA256 match and writes only learned tensor weights. There is no
+unsafe loading fallback in the updated generation/training code.
 
-Then, the directory substructure is as follows:
-
-
-```
-.
-├── ckpts/
-│   ├── GCN/
-│   │    └── GCN.pth
-│   └── Transformer/
-│        ├── ckpt_conditional.pth
-│        └── ckpt_unconditional.pth
-└── ...
+```bash
+/path/to/reference/bin/python validation/convert_checkpoint.py \
+  /path/to/ckpt_conditional.pth \
+  ckpts/Transformer/ckpt_conditional.runtime.pth \
+  --reference-repo /path/to/historical-TRACER
 ```
 
+See [validation/REPRODUCE.md](validation/REPRODUCE.md) for the isolated reference
+setup and hashes. The GCN checkpoint is bundled unchanged. QSAR inference uses
+converted numerical `.npz` forests, not sklearn pickle. Their learned trees and
+leaf probabilities are preserved; no retraining is involved. Historical pickle
+files remain on main and in Git history. The unconditional file was converted
+and hashed, but unconditional generation is outside the recorded comparisons.
 
 ## Configuration
 

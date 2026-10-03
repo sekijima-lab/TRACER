@@ -1,0 +1,472 @@
+{
+  "new": [
+    {
+      "name": "aiohappyeyeballs",
+      "version": "2.7.1"
+    },
+    {
+      "name": "aiohttp",
+      "version": "3.14.3"
+    },
+    {
+      "name": "aiosignal",
+      "version": "1.4.0"
+    },
+    {
+      "name": "antlr4-python3-runtime",
+      "version": "4.9.3"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.7.22"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2"
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2"
+    },
+    {
+      "name": "filelock",
+      "version": "4.0.9"
+    },
+    {
+      "name": "frozenlist",
+      "version": "1.8.0"
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.9.0"
+    },
+    {
+      "name": "hydra-core",
+      "version": "1.3.7"
+    },
+    {
+      "name": "idna",
+      "version": "3.20"
+    },
+    {
+      "name": "jinja2",
+      "version": "3.1.6"
+    },
+    {
+      "name": "joblib",
+      "version": "1.6.0"
+    },
+    {
+      "name": "json5",
+      "version": "0.15.0"
+    },
+    {
+      "name": "markupsafe",
+      "version": "3.0.4"
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0"
+    },
+    {
+      "name": "multidict",
+      "version": "6.9.1"
+    },
+    {
+      "name": "narwhals",
+      "version": "2.26.0"
+    },
+    {
+      "name": "networkx",
+      "version": "3.7"
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.3"
+    },
+    {
+      "name": "omegaconf",
+      "version": "2.3.1"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pandas",
+      "version": "3.0.6"
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0"
+    },
+    {
+      "name": "propcache",
+      "version": "0.5.4"
+    },
+    {
+      "name": "psutil",
+      "version": "7.2.2"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0"
+    },
+    {
+      "name": "pyyaml",
+      "version": "6.0.3"
+    },
+    {
+      "name": "rdkit",
+      "version": "2026.3.6"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2"
+    },
+    {
+      "name": "scikit-learn",
+      "version": "1.9.1"
+    },
+    {
+      "name": "scipy",
+      "version": "1.18.1"
+    },
+    {
+      "name": "setuptools",
+      "version": "84.0.0"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0"
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0"
+    },
+    {
+      "name": "threadpoolctl",
+      "version": "3.7.0"
+    },
+    {
+      "name": "torch",
+      "version": "2.14.1"
+    },
+    {
+      "name": "torch-geometric",
+      "version": "2.8.0.post1"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1"
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0"
+    },
+    {
+      "name": "xxhash",
+      "version": "4.0.1"
+    },
+    {
+      "name": "yarl",
+      "version": "1.25.1"
+    }
+  ],
+  "reference": [
+    {
+      "name": "antlr4-python3-runtime",
+      "version": "4.9.3"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.7.22"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2"
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2"
+    },
+    {
+      "name": "filelock",
+      "version": "4.0.9"
+    },
+    {
+      "name": "hydra-core",
+      "version": "1.3.2",
+      "vulns": [
+        {
+          "id": "GHSA-2cp2-2r3c-7p7r",
+          "modified": "2026-09-10T12:25:59.118521Z"
+        },
+        {
+          "id": "PYSEC-2026-3850",
+          "modified": "2026-09-10T12:15:05.604207Z"
+        }
+      ]
+    },
+    {
+      "name": "idna",
+      "version": "3.20"
+    },
+    {
+      "name": "jinja2",
+      "version": "3.1.6"
+    },
+    {
+      "name": "joblib",
+      "version": "1.6.0"
+    },
+    {
+      "name": "json5",
+      "version": "0.9.14"
+    },
+    {
+      "name": "markupsafe",
+      "version": "3.0.4"
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0"
+    },
+    {
+      "name": "networkx",
+      "version": "3.4.2"
+    },
+    {
+      "name": "numpy",
+      "version": "1.23.5"
+    },
+    {
+      "name": "omegaconf",
+      "version": "2.3.0"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pandas",
+      "version": "1.5.3"
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0"
+    },
+    {
+      "name": "psutil",
+      "version": "7.2.2"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0"
+    },
+    {
+      "name": "pytz",
+      "version": "2026.4"
+    },
+    {
+      "name": "pyyaml",
+      "version": "6.0.3"
+    },
+    {
+      "name": "rdkit",
+      "version": "2022.9.5"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2"
+    },
+    {
+      "name": "scikit-learn",
+      "version": "1.2.2",
+      "vulns": [
+        {
+          "id": "GHSA-jw8x-6495-233v",
+          "modified": "2026-09-10T03:50:15.628224Z"
+        },
+        {
+          "id": "PYSEC-2024-110",
+          "modified": "2026-06-10T17:02:43.910139Z"
+        }
+      ]
+    },
+    {
+      "name": "scipy",
+      "version": "1.15.3"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0"
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0"
+    },
+    {
+      "name": "threadpoolctl",
+      "version": "3.7.0"
+    },
+    {
+      "name": "torch",
+      "version": "2.0.1",
+      "vulns": [
+        {
+          "id": "GHSA-3749-ghw9-m3mg",
+          "modified": "2026-09-10T03:50:22.781448Z"
+        },
+        {
+          "id": "GHSA-53q9-r3pm-6pq6",
+          "modified": "2026-08-07T08:12:20.395044Z"
+        },
+        {
+          "id": "GHSA-5pcm-hx3q-hm94",
+          "modified": "2026-07-27T12:26:34.306757Z"
+        },
+        {
+          "id": "GHSA-887c-mr87-cxwp",
+          "modified": "2026-09-10T03:50:23.660138Z"
+        },
+        {
+          "id": "GHSA-c678-jfcj-6jmf",
+          "modified": "2026-06-09T21:26:06.844649Z"
+        },
+        {
+          "id": "GHSA-f4hp-rmr7-r7v8",
+          "modified": "2026-06-09T22:11:09.050788Z"
+        },
+        {
+          "id": "GHSA-pg7h-5qx3-wjr3",
+          "modified": "2025-06-11T06:29:21.475649Z"
+        },
+        {
+          "id": "GHSA-qfhq-4f3w-5fph",
+          "modified": "2026-06-10T18:26:26.736808Z"
+        },
+        {
+          "id": "GHSA-rrmf-rvhw-rf47",
+          "modified": "2026-09-10T03:49:48.419046Z"
+        },
+        {
+          "id": "GHSA-vgrw-7cvw-pwgx",
+          "modified": "2026-06-10T17:41:15.774477Z"
+        },
+        {
+          "id": "GHSA-x3gm-94wq-g975",
+          "modified": "2026-06-09T22:11:08.734544Z"
+        },
+        {
+          "id": "PYSEC-2024-250",
+          "modified": "2025-06-04T15:57:11.927887Z"
+        },
+        {
+          "id": "PYSEC-2024-251",
+          "modified": "2026-06-10T17:51:26.526436Z"
+        },
+        {
+          "id": "PYSEC-2024-252",
+          "modified": "2026-07-27T12:26:34.306757Z"
+        },
+        {
+          "id": "PYSEC-2024-259",
+          "modified": "2025-07-16T09:57:09.952334Z"
+        },
+        {
+          "id": "PYSEC-2025-191",
+          "modified": "2026-06-10T17:02:35.808223Z"
+        },
+        {
+          "id": "PYSEC-2025-198",
+          "modified": "2026-05-20T09:19:19.437232Z"
+        },
+        {
+          "id": "PYSEC-2025-203",
+          "modified": "2026-05-20T09:19:19.739357Z"
+        },
+        {
+          "id": "PYSEC-2025-204",
+          "modified": "2026-05-20T09:19:19.802802Z"
+        },
+        {
+          "id": "PYSEC-2025-205",
+          "modified": "2026-05-20T09:19:19.866970Z"
+        },
+        {
+          "id": "PYSEC-2025-206",
+          "modified": "2026-05-20T09:19:19.928295Z"
+        },
+        {
+          "id": "PYSEC-2025-207",
+          "modified": "2026-05-20T09:19:19.989717Z"
+        },
+        {
+          "id": "PYSEC-2025-208",
+          "modified": "2026-05-20T09:19:20.054109Z"
+        },
+        {
+          "id": "PYSEC-2025-209",
+          "modified": "2026-05-20T09:19:20.117285Z"
+        },
+        {
+          "id": "PYSEC-2025-41",
+          "modified": "2025-05-28T15:41:47.508237Z"
+        },
+        {
+          "id": "PYSEC-2026-139",
+          "modified": "2026-05-21T15:00:31.962442Z"
+        },
+        {
+          "id": "PYSEC-2026-1970",
+          "modified": "2026-07-07T17:56:13.049049Z"
+        },
+        {
+          "id": "PYSEC-2026-2286",
+          "modified": "2026-07-13T07:26:23.701611Z"
+        }
+      ]
+    },
+    {
+      "name": "torch-geometric",
+      "version": "2.3.0"
+    },
+    {
+      "name": "torchdata",
+      "version": "0.6.1"
+    },
+    {
+      "name": "torchtext",
+      "version": "0.15.2"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.66.4"
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0"
+    }
+  ]
+}

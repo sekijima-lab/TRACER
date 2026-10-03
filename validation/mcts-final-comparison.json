@@ -1,0 +1,44 @@
+[
+  {
+    "seed": 1729,
+    "input": "OC1CCc2cc(F)ccc21",
+    "discrete_exact": true,
+    "reward_max_abs": 0.0,
+    "molecules": 6
+  },
+  {
+    "seed": 1729,
+    "input": "c1ccc2c(c1)CC1CNCCN21",
+    "discrete_exact": true,
+    "reward_max_abs": 0.0,
+    "molecules": 9
+  },
+  {
+    "seed": 19,
+    "input": "OC1CCc2cc(F)ccc21",
+    "discrete_exact": true,
+    "reward_max_abs": 0.0,
+    "molecules": 6
+  },
+  {
+    "seed": 19,
+    "input": "c1ccc2c(c1)CC1CNCCN21",
+    "discrete_exact": true,
+    "reward_max_abs": 5.551115123125783e-17,
+    "molecules": 9
+  },
+  {
+    "seed": 73,
+    "input": "OC1CCc2cc(F)ccc21",
+    "discrete_exact": true,
+    "reward_max_abs": 0.0,
+    "molecules": 6
+  },
+  {
+    "seed": 73,
+    "input": "c1ccc2c(c1)CC1CNCCN21",
+    "discrete_exact": true,
+    "reward_max_abs": 5.551115123125783e-17,
+    "molecules": 9
+  }
+]

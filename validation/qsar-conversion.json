@@ -1,0 +1,26 @@
+[
+  {
+    "source": "qsar_AKT1_optimized.pkl",
+    "source_sha256": "06b15206f5a79076646130dd07bea5bc9111b278a27eb55c978d23f57855c56f",
+    "converted": "qsar_AKT1_optimized.npz",
+    "converted_sha256": "04af6bc54148a854fdc534f54b424900638046480e9907a20e389dce02580577",
+    "trees": 158,
+    "features": 2048
+  },
+  {
+    "source": "qsar_CXCR4_optimized.pkl",
+    "source_sha256": "29e8e71fb9791bcdc99a339357ac8e5b2a3660e5f1743c011b55cea61d202e4a",
+    "converted": "qsar_CXCR4_optimized.npz",
+    "converted_sha256": "e8418fa5096d22a30ea864bf5539dd93855dec3efe77efd6247dcc8aa712c01e",
+    "trees": 223,
+    "features": 2048
+  },
+  {
+    "source": "qsar_DRD2_optimized.pkl",
+    "source_sha256": "2db876d2c1d2831594021419fdf8b037c624e68126b3cc240116f99b3c1609aa",
+    "converted": "qsar_DRD2_optimized.npz",
+    "converted_sha256": "9d27f56665ce413fa74fa2341ac89bef4d5c52ff644ee11cf2519e04a57d0850",
+    "trees": 151,
+    "features": 2048
+  }
+]

@@ -1,6 +1,7 @@
+from tracer_runtime.runtime import get_device, announce
 import operator
 import torch
-import torchtext.vocab.vocab as Vocab
+from tracer_runtime.vocab import Vocabulary as Vocab
 import rdkit.Chem as Chem
 import hydra
 from config.config import cs
@@ -12,7 +13,7 @@ from scripts.preprocess import make_counter ,make_transforms
 import itertools
 import os
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = get_device()
 
 class BeamSearchNode(object):
     def __init__(self, previousNode, decoder_input, logProb, length):
@@ -154,7 +155,7 @@ def translation(cfg:DictConfig):
     dim_ff = cfg['model']['dim_ff']
     model = Transformer(d_model=d_model, nhead=nhead, num_encoder_layers=num_encoder_layers, num_decoder_layers=num_decoder_layers,
                         dim_feedforward=dim_ff,vocab=v, dropout=dropout, device=device).to(device)
-    ckpt = torch.load(hydra.utils.get_original_cwd() + cfg['model']['ckpt'], map_location=device)
+    ckpt = torch.load(hydra.utils.get_original_cwd() + cfg['model']['ckpt'], map_location=device, weights_only=True)
     model.load_state_dict(ckpt['model_state_dict'])
     
     # make dataset
@@ -187,6 +188,7 @@ def translation(cfg:DictConfig):
 
 @hydra.main(config_path=None, config_name='config', version_base=None)
 def main(cfg: DictConfig):
+    announce()
     translation(cfg)
 
 if __name__ == '__main__':

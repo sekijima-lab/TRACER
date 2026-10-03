@@ -1,0 +1,86 @@
+{
+  "fingerprints": {
+    "max_abs": 0.0,
+    "exact": true,
+    "limit": 0,
+    "pass": true
+  },
+  "qed": {
+    "max_abs": 2.220446049250313e-16,
+    "exact": false,
+    "limit": 1e-12,
+    "pass": true
+  },
+  "qsar_AKT1": {
+    "max_abs": 2.220446049250313e-16,
+    "exact": false,
+    "limit": 1e-12,
+    "pass": true
+  },
+  "qsar_CXCR4": {
+    "max_abs": 2.220446049250313e-16,
+    "exact": false,
+    "limit": 1e-12,
+    "pass": true
+  },
+  "qsar_DRD2": {
+    "max_abs": 2.220446049250313e-16,
+    "exact": false,
+    "limit": 1e-12,
+    "pass": true
+  },
+  "graph_x": {
+    "max_abs": 0.0,
+    "exact": true,
+    "limit": 0,
+    "pass": true
+  },
+  "graph_edge_index": {
+    "max_abs": 0.0,
+    "exact": true,
+    "limit": 0,
+    "pass": true
+  },
+  "graph_edge_attr": {
+    "max_abs": 0.0,
+    "exact": true,
+    "limit": 0,
+    "pass": true
+  },
+  "graph_batch": {
+    "max_abs": 0.0,
+    "exact": true,
+    "limit": 0,
+    "pass": true
+  },
+  "gcn_logits": {
+    "max_abs": 1.71661376953125e-05,
+    "exact": false,
+    "limit": 1e-05,
+    "pass": false
+  },
+  "gcn_top10": {
+    "max_abs": 0.0,
+    "exact": true,
+    "limit": 0,
+    "pass": true
+  },
+  "gcn_loss": {
+    "max_abs": 1.9073486328125e-06,
+    "exact": false,
+    "limit": 0.0001,
+    "pass": true
+  },
+  "gcn_gradient": {
+    "max_abs": 1.4066696166992188e-05,
+    "exact": false,
+    "limit": 0.0001,
+    "pass": true
+  },
+  "gcn_weights": {
+    "max_abs": 0.0007912814617156982,
+    "exact": false,
+    "limit": 0.0001,
+    "pass": false
+  }
+}

@@ -11,7 +11,7 @@ class EarlyStopping:
         self.counter = 0            # current counter
         self.best_score = None      # best score
         self.early_stop = False     # stop flag
-        self.val_loss_min = np.Inf   # to memorize previous best score
+        self.val_loss_min = np.inf   # to memorize previous best score
         self.path = path             # path to save the best model
 
     def __call__(self, val_loss, model):

@@ -1,7 +1,10 @@
+from tracer_runtime.runtime import get_device, announce, metadata
 import os
+import json
 import torch
-from torch_geometric.data import DataLoader
+from torch_geometric.loader import DataLoader
 import torch.nn.functional as F
+from tracer_runtime.softmax import cross_entropy
 
 from Model.GCN import mol2graph
 from Model.GCN.callbacks import EarlyStopping
@@ -15,7 +18,7 @@ from omegaconf import DictConfig, OmegaConf
 from tqdm.auto import tqdm
 
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = get_device()
 date = datetime.datetime.now().strftime('%Y%m%d')
 
 def train(model, optimizer, loader):
@@ -25,7 +28,7 @@ def train(model, optimizer, loader):
         optimizer.zero_grad()
         data = data.to(device)
         output = model.forward(data.x, data.edge_index, data.batch).squeeze(1)
-        loss =  F.cross_entropy(output, data.y)
+        loss =  cross_entropy(output, data.y, model.old_compatible)
         loss.backward()
         loss_all += loss.item() * data.num_graphs
         optimizer.step()
@@ -41,7 +44,7 @@ def eval(model, loader, ks=None):
         for data in loader:
             data = data.to(device)
             output = model.forward(data.x, data.edge_index, data.batch) # output.shape = (batch_size, vocab_size)
-            loss = F.cross_entropy(output, data.y)
+            loss = cross_entropy(output, data.y, model.old_compatible)
             loss_all += loss.item() * data.num_graphs
             if ks is not None:
                 for k in ks:
@@ -60,6 +63,7 @@ def topk_accuracy(data, output, k: int):
 
 @hydra.main(config_path=None, config_name='config', version_base=None)
 def main(cfg: DictConfig):
+    announce()
     print('Loading data...')
     train_path = cfg['GCN_train']['train']
     valid_path = cfg['GCN_train']['valid']
@@ -121,6 +125,9 @@ def main(cfg: DictConfig):
     lr = cfg['GCN_train']['lr']
     epochs = cfg['GCN_train']['epochs']
     patience = cfg['GCN_train']['patience']
+
+    with open(os.path.join(ckpt_dir, 'runtime.json'), 'w') as f:
+        json.dump(metadata(), f, indent=2)
 
     # Model instance construction
     print('Model instance construction')
